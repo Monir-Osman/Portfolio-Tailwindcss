@@ -8,6 +8,7 @@ module.exports = {
         kaushan: ["Kaushan Script", "cursive"],
         stickNoBills: ["Stick No Bills", "sans-serif"],
         sriracha: ["Sriracha", "cursive"],
+        kalam: ["Kalam", "cursive"],
       },
       colors: {
         blueSky: "#00b1ec",

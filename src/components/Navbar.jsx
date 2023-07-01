@@ -3,14 +3,23 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Fade from "react-reveal/Fade";
-// i start here
 function Navbar() {
   const matches = useMediaQuery("(min-width:768px)");
   const [isClicked, setIsClicked] = useState(false);
+
+  const [doesItScroll, setDoesItScroll] = useState(false);
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 100) {
+      setDoesItScroll(true);
+    } else {
+      setDoesItScroll(false);
+    }
+  });
+
   return (
     <div>
       {matches ? (
-        <nav className="fixed z-50 top-0 h-16 w-full flex justify-center items-center">
+        <nav className="fixed z-50 top-0 h-14 w-full flex justify-center duration-200 items-center bg-white/0 backdrop-blur">
           <ul className="list-none ">
             <li className="inline mr-2 ml-2">
               <a
@@ -36,14 +45,14 @@ function Navbar() {
                 Skills
               </a>
             </li>
-            <li className="inline  mr-2 ml-2">
+            {/* <li className="inline  mr-2 ml-2">
               <a
                 href="#works"
                 className="text-white font-roboto font-thin border border-transparent transition-all duration-300 rounded-3xl hover:text-blueSky hover:border-blueSky pt-1 pb-1 pr-3 pl-3"
               >
                 Works
               </a>
-            </li>
+            </li> */}
             <li className="inline mr-2 ml-2">
               <a
                 href="#contact"
@@ -85,9 +94,9 @@ function Navbar() {
                   <li className="text-white p-4 font-roboto text-xl border-b border-slate-500">
                     <a href="#skills">Skills</a>
                   </li>
-                  <li className="text-white p-4 font-roboto text-xl border-b border-slate-500">
+                  {/* <li className="text-white p-4 font-roboto text-xl border-b border-slate-500">
                     <a href="#works">Works</a>
-                  </li>
+                  </li> */}
                   <li className="text-white p-4 font-roboto text-xl border-b border-slate-500">
                     <a href="#contact">Contact</a>
                   </li>
